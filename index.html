@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Its a Web Application which consists of a Clock, a Stopwatch and a Timer"
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Clock, Stopwatch, Timer"
+    />
+    <meta name="author" content="Kalyan Puppala" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock-Stopwatch-Timer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Heading -->
+    <header>
+      <a id="clockHeading">Clock</a>
+      <a id="stopwatchHeading">Stopwatch</a>
+      <a id="timerHeading">Timer</a>
+    </header>
+    <!-- Heading End -->
+
+    <div class="container">
+      <!-- Main Tag in which Clock, Stopwatch and Timer exists -->
+      <div class="main">
+        <!-- Format Mode Checkbox -->
+        <div class="formatMode">
+          <input type="checkbox" id="formatMode" />
+          <label for="formatMode">- 12/24 Hour Time Format</label>
+        </div>
+        <!-- Format Mode Checkbox Ended -->
+
+        <!-- Clock -->
+        <div id="clock">
+          <div id="meridiem"></div>
+
+          <div class="clockTime">
+            <div id="clockHour"></div>
+            <div class="colon">:</div>
+            <div id="clockMinute"></div>
+            <div class="colon">:</div>
+            <div id="clockSecond"></div>
+          </div>
+          <div id="timeLabel">TIME</div>
+          <hr class="first" />
+          <div class="clockDate">
+            <div id="clockDateLabel">DATE</div>
+            <div id="clockDate"></div>
+          </div>
+          <div class="slash">/</div>
+          <div class="clockMonth">
+            <div id="clockMonthLabel">MONTH</div>
+            <div id="clockMonth"></div>
+          </div>
+          <div class="pipe">|</div>
+          <div class="clockDay">
+            <div id="clockDayLabel">DAY</div>
+            <div id="clockDayName"></div>
+          </div>
+          <hr class="second" />
+          <div class="clockYear">
+            <div id="clockYearLabel">YEAR</div>
+            <div id="clockYear"></div>
+          </div>
+        </div>
+        <!-- Clock Ended -->
+
+        <!-- Stopwatch -->
+        <div id="stopwatch">
+          <div class="stopwatchTime">
+            <div id="stopwatchHour">0</div>
+            <div class="colon">:</div>
+            <div id="stopwatchMinute">0</div>
+            <div class="colon">:</div>
+            <div id="stopwatchSecond">0</div>
+            <div id="stopwatchMillisecond">0</div>
+          </div>
+
+          <hr class="third" />
+
+          <div id="lap"></div>
+
+          <div class="stopwatchButton">
+            <button id="stopwatchReset" type="button">RESET</button>
+            <button id="stopwatchStartStop" type="button">START</button>
+            <button id="stopwatchCountLap" type="button">LAP</button>
+          </div>
+        </div>
+        <!-- Stopwatch Ended -->
+
+        <!-- Timer -->
+        <div id="timer">
+          <div class="timerTime">
+            <input
+              type="number"
+              id="timerHour"
+              value=""
+              step="1"
+              onkeypress="return timerValidationHandler(event)"
+              title="Numbers only"
+              min="0"
+              max="99"
+              maxlength="2"
+              placeholder="HH"
+            />
+
+            <input
+              type="number"
+              id="timerMinute"
+              value=""
+              step="1"
+              onkeypress="return timerValidationHandler(event)"
+              title="Numbers only"
+              min="0"
+              max="60"
+              maxlength="2"
+              placeholder="MM"
+            />
+
+            <input
+              type="number"
+              id="timerSecond"
+              value=""
+              step="1"
+              onkeypress="return timerValidationHandler(event)"
+              title="Numbers only"
+              min="0"
+              max="60"
+              maxlength="2"
+              placeholder="SS"
+            />
+          </div>
+
+          <div class="timerButton">
+            <button id="timerReset" type="button">RESET</button>
+            <button id="timerStartStop" type="button">START</button>
+            <button id="timerDelete" type="button">DELETE</button>
+          </div>
+        </div>
+        <!-- Timer Ended -->
+      </div>
+      <!-- Main Tag Ended -->
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
